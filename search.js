@@ -14,10 +14,10 @@ var yelp = require("yelp");
 
 yelpSearch.get('/data', function(req, res) {
     request(yelp.createClient({
-        consumer_key: "consumer-key",
-        consumer_secret: "consumer-secret",
-        token: "token",
-        token_secret: "token-secret"
+        consumer_key: "XBSJFJsDjNgvoyr2LKzZng",
+        consumer_secret: "M6MxbbPJ1MMSsnDbFVDxkTPjujk",
+        token: "iFGeQNZdSJPCWq_qdGWOBEHVDjyOT0nZ",
+        token_secret: "BNYHWbboW8wnhuzOkxuewSII3owt"
     }));
 
     yelp.business("yelp-san-francisco", function(error, data) {
