@@ -1,0 +1,23 @@
+body {
+    background: url(beerpic.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#title {
+    color:red;
+}
+
+#subtitle {
+    color:red;
+}
+
+.cities:hover {
+    color:red;
+}
+
+#first {
+    display:none;
+}

@@ -1,30 +1,21 @@
-//There is some javascript documentation that I found, but it is very limited:
-//https://github.com/olalonde/node-yelp/
-//https://www.yelp.com/developers/documentation/v2/business
-//On their API page they offer templates, but in languages I don't know:
-//https://www.yelp.com/developers/documentation/v2/examples
-
-//In lieu of a format I tried to match what they offered, about what I knew from 7.0.  Obviously that didn't work:
-
 var express = require('express');
 var request = require('request');
-
 var yelpSearch = express.Router();
-var yelp = require("yelp");
+var yelp = require("node-yelp");
 
-yelpSearch.get('/data', function(req, res) {
-    request(yelp.createClient({
-        consumer_key: "XBSJFJsDjNgvoyr2LKzZng",
-        consumer_secret: "M6MxbbPJ1MMSsnDbFVDxkTPjujk",
-        token: "iFGeQNZdSJPCWq_qdGWOBEHVDjyOT0nZ",
-        token_secret: "BNYHWbboW8wnhuzOkxuewSII3owt"
-    }));
 
-    yelp.business("yelp-san-francisco", function(error, data) {
-        console.log(error);
-        console.log(data);
+yelpSearch.get('/data/:locate', function(req,res){
+    var myYelp = yelp.createClient({
+        oauth: {
+            "consumer_key": "XBSJFJsDjNgvoyr2LKzZng",
+            "consumer_secret": "M6MxbbPJ1MMSsnDbFVDxkTPjujk",
+            "token": "h9JSuEFd5WegVN-d1gfwVkpLAR16SPoF",
+            "token_secret": "IYhXjD_5WmksStA3e_46eJOCwBs"
+        }});
+
+    myYelp.search({location: req.params.locate ,category_filter: "breweries", sort:"one"}).then( function(data) {
+         res.send(data);
     });
-    res.send(console.log(stepone))
 });
 
 module.exports = yelpSearch;
