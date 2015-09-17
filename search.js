@@ -4,7 +4,7 @@ var yelpSearch = express.Router();
 var yelp = require("node-yelp");
 
 
-yelpSearch.get('/data/:locate', function(req,res){
+yelpSearch.get('/data', function(req,res){
     var myYelp = yelp.createClient({
         oauth: {
             "consumer_key": "XBSJFJsDjNgvoyr2LKzZng",
@@ -13,7 +13,7 @@ yelpSearch.get('/data/:locate', function(req,res){
             "token_secret": "IYhXjD_5WmksStA3e_46eJOCwBs"
         }});
 
-    myYelp.search({location: req.params.locate ,category_filter: "breweries", sort:"one"}).then( function(data) {
+    myYelp.search({location: "Huntington Beach" ,category_filter: "breweries", sort:"one"}).then( function(data) {
          res.send(data);
     });
 });
