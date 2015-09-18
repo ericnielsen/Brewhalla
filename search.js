@@ -14,7 +14,7 @@ yelpSearch.get('/data/:term', function(req,res){
     myYelp.search(
     {
         term: req.param.term,
-        location: "Huntington Beach" ,
+        location: "Orange County" ,
         category_filter: "breweries"
         }).then( function(data) {
          res.send(data);
