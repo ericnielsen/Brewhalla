@@ -1,9 +1,8 @@
 var express = require('express');
-var request = require('request');
 var yelpSearch = express.Router();
 var yelp = require("node-yelp");
 
-yelpSearch.get('/data/:location', function(req,res){
+yelpSearch.get('/data/:term', function(req,res){
     var myYelp = yelp.createClient({
         oauth: {
             "consumer_key": "XBSJFJsDjNgvoyr2LKzZng",

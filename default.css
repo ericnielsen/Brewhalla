@@ -14,6 +14,10 @@ body {
     color:red;
 }
 
+#findtitle {
+    color:red;
+}
+
 .cities:hover {
     color:red;
 }
