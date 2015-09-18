@@ -13,9 +13,8 @@ getList[0].addEventListener('click', function(event) {
     });
 },
 false);
-/*
+
 $('a').on('click', function(){
    var target = $(this).attr('rel');
    $("#"+target).show().siblings("div").hide();
 });
-*/
