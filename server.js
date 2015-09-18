@@ -3,7 +3,6 @@ var app = express();
 var path = require('path');
 var searchData = require('./search.js');
 
-
 app.use('/search', searchData);
 
 app.get('/', function(req, res) {
