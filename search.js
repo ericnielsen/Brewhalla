@@ -13,7 +13,11 @@ yelpSearch.get('/data', function(req,res){
             "token_secret": "IYhXjD_5WmksStA3e_46eJOCwBs"
         }});
 
-    myYelp.search({location: "Huntington Beach" ,category_filter: "breweries", sort:"one"}).then( function(data) {
+    myYelp.search({
+        term: 'beer',
+        location: "Huntington Beach" ,
+        category_filter: "breweries",
+        }).then( function(data) {
          res.send(data);
     });
 });
