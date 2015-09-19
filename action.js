@@ -1,16 +1,22 @@
 var getList = document.getElementsByTagName('ul');
 getList[0].addEventListener('click', function(event) {
-    var target = event.target;
+
+   /* var target = event.target;
     var messageText = 'Breweries located in ' + target.textContent;
     var messageDiv = document.getElementById('message');
     messageDiv.innerHTML = messageText;
-
+*/
     var term = event.target.textContent;
     var request = new XMLHttpRequest();
     request.open('GET', 'http://localhost:1337/search/data/' + term);
     request.send();
     request.addEventListener('load', function() {
-        console.log(request.responseText);
+       // console.log(request.responseText);
+    var getData = JSON.parse(request.responseText);
+    console.log(getData.businesses[0].name);
+
+
+   // var dataDiv = document.getElementById('datacontent');
     });
 
 },
@@ -21,3 +27,4 @@ false);
    $("#"+target).show().siblings("div").hide();
 });
 */
+
