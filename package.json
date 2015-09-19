@@ -1,0 +1,31 @@
+{
+  "name": "brewhalla",
+  "version": "1.0.0",
+  "description": "local brewery source",
+  "main": "search.js",
+  "scripts": {
+    "test": "this is a test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericnielsen/Brewhalla.git"
+  },
+  "keywords": [
+    "orange",
+    "county",
+    "brewery",
+    "search"
+  ],
+  "dependencies": {
+    "express": "^4.13.3",
+    "request": "^2.62.0",
+    "node-yelp": "^0.0.3"
+  },
+  "author": "Eric Nielsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericnielsen/Brewhalla/issues"
+  },
+  "homepage": "https://github.com/ericnielsen/Brewhalla#readme"
+}
