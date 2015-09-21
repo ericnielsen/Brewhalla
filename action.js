@@ -19,14 +19,24 @@ getList[0].addEventListener('click', function(event) {
 
             for(var i = 0; i < getData.businesses.length; i++) {
                 brewery = {
-                    name: getData.businesses[i].name
-                    //rating: getData.businesses[i].rating
+                    name: getData.businesses[i].name,
+                    rating: getData.businesses[i].rating
                 };
-                 console.log(breweryList[i].brewery[i])
+                breweryList.push(brewery);
             }
+            console.log([breweryList]);
+
             /* var test = getData.businesses[0].name;
              var dataDiv = document.getElementById('datacontent');
              dataDiv.textContent = test; */
         });
+
     },
     false);
+
+/* $('a').on('click', function(){
+ var target = $(this).attr('rel');
+ $("#"+target).show().siblings("div").hide();
+ });
+ */
+
