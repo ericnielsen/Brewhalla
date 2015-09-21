@@ -14,22 +14,12 @@ getList[0].addEventListener('click', function(event) {
             var getData = JSON.parse(request.responseText);
             //console.log(getData.businesses[0].name);
 
-            var breweryList = [];
-            var brewery = {};
-
             for(var i = 0; i < getData.businesses.length; i++) {
-                brewery = {
-                    name: getData.businesses[i].name,
-                    rating: getData.businesses[i].rating
-                };
-                breweryList.push(brewery);
+                console.log(getData.businesses[i].location);
             }
-            console.log([breweryList]);
-
             /* var test = getData.businesses[0].name;
              var dataDiv = document.getElementById('datacontent');
              dataDiv.textContent = test; */
         });
-
     },
     false);
