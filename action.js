@@ -5,7 +5,7 @@ getList[0].addEventListener('click', function(event) {
          var messageDiv = document.getElementById('message');
          messageDiv.innerHTML = messageText;
          */
-        var term = event.target.textContent;
+        var term =event.target.textContent;
         var request = new XMLHttpRequest();
         request.open('GET', 'http://localhost:1337/search/data/' + term);
         console.log('http://localhost:1337/search/data/' + term)
