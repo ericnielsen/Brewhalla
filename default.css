@@ -6,6 +6,10 @@ body {
     background-size: cover;
 }
 
+.nametitle {
+    font-weight:bold;
+}
+
 #title {
     color:red;
 }

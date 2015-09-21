@@ -20,12 +20,22 @@ getList[0].addEventListener('click', function(event) {
                 if (dataCity == term) {
                     for (var x = 0; x < dataObject.name[x].length; x++) {
                         var brewName = document.createElement("p");
+                        brewName.setAttribute('class','nametitle');
                         brewName.textContent = dataObject.name;
                         var brewAdd = document.createElement("p");
                         brewAdd.textContent = dataObject.location.display_address;
+                        var brewPhone = document.createElement("p");
+                        brewPhone.textContent = dataObject.display_phone;
+                        var brewEmail = document.createElement("p");
+                        brewEmail.textContent = dataObject.url;
+                        var brewRating = document.createElement("p");
+                        brewRating.textContent = 'rating: ' + dataObject.rating;
                         var destDiv = document.getElementById('datacontent');
                         destDiv.appendChild(brewName);
                         destDiv.appendChild(brewAdd);
+                        destDiv.appendChild(brewPhone);
+                        destDiv.appendChild(brewEmail);
+                        destDiv.appendChild(brewRating);
                     }
                 }
             }
