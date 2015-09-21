@@ -2,7 +2,7 @@ var express = require('express');
 var yelpSearch = express.Router();
 var yelp = require("node-yelp");
 
-yelpSearch.get('/data/:term', function(req,res){
+yelpSearch.get('/data/:location', function(req,res){
     var myYelp = yelp.createClient({
         oauth: {
             "consumer_key": "XBSJFJsDjNgvoyr2LKzZng",
@@ -13,10 +13,8 @@ yelpSearch.get('/data/:term', function(req,res){
 
     myYelp.search(
     {
-        term: req.param.term,
-        location: "Orange County" ,
-        sort: "1",
-        limit:"20",
+        location: req.param.location ,
+        term: "brewery",
         category_filter: "breweries",
         radius_filter: "40000"
 
