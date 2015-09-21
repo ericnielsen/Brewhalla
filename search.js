@@ -14,7 +14,9 @@ yelpSearch.get('/data/:term', function(req,res){
     myYelp.search(
     {
         term: req.param.term,
-        location: "Orange" ,
+        location: "Orange County" ,
+        sort: "1",
+        limit:"20",
         category_filter: "breweries",
         radius_filter: "40000"
 

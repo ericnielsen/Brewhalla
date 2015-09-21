@@ -8,7 +8,6 @@ getList[0].addEventListener('click', function(event) {
         var term = event.target.textContent;
         var request = new XMLHttpRequest();
         request.open('GET', 'http://localhost:1337/search/data/' + term);
-        console.log('http://localhost:1337/search/data/' + term)
         request.send();
         request.addEventListener('load', function() {
             var reset = document.getElementById('datacontent');
