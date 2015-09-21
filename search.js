@@ -10,10 +10,10 @@ yelpSearch.get('/data/:term', function(req,res){
             "token": "h9JSuEFd5WegVN-d1gfwVkpLAR16SPoF",
             "token_secret": "IYhXjD_5WmksStA3e_46eJOCwBs"
         }});
+
     myYelp.search(
     {
         term: req.param.term,
-        //limit: "100",
         location: "Orange" ,
         category_filter: "breweries",
         radius_filter: "40000"
