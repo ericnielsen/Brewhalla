@@ -22,21 +22,11 @@ getList[0].addEventListener('click', function(event) {
                     name: getData.businesses[i].name
                     //rating: getData.businesses[i].rating
                 };
-                breweryList.push(brewery);
+                 console.log(breweryList[i].brewery[i])
             }
-            console.log(breweryList.);
-
             /* var test = getData.businesses[0].name;
              var dataDiv = document.getElementById('datacontent');
              dataDiv.textContent = test; */
         });
-
     },
     false);
-
-/* $('a').on('click', function(){
- var target = $(this).attr('rel');
- $("#"+target).show().siblings("div").hide();
- });
- */
-
