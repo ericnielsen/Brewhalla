@@ -18,31 +18,32 @@ getList[0].addEventListener('click', function(event) {
                 if (dataCity == term) {
                     for (var x = 0; x < dataObject.name[x].length; x++) {
                         var brewPic = document.createElement("p");
-                        brewPic.innerHTML = "<img src =" + dataObject.image_url + ">";
+                        brewPic.innerHTML = "<img id = 'pic' src =" + dataObject.image_url + ">";
                         var brewName = document.createElement("p");
                         brewName.setAttribute('class','nametitle');
-                        brewName.textContent = dataObject.name;
+                        brewName.innerHTML = "<a href=" + dataObject.url + ">" + dataObject.name +'</a>';
                         var brewAdd = document.createElement("p");
-                        brewAdd.textContent = dataObject.location.display_address;
+                        brewAdd.innerHTML = "Address: " + dataObject.location.display_address;
                         var brewPhone = document.createElement("p");
-                        brewPhone.textContent = dataObject.display_phone;
-                        var brewEmail = document.createElement("p");
-                        brewEmail.textContent = dataObject.url;
+                        brewPhone.innerHTML = "Phone Number: " + dataObject.phone;
                         var brewRating = document.createElement("p");
-                        brewRating.textContent = 'rating: ' + dataObject.rating;
-                        var destDiv = document.getElementById('datacontent');
+                        brewRating.innerHTML = "Yelp Rating: " + "<img src =" + dataObject.rating_img_url_large + ">";
                         var picDiv = document.createElement("div");
                         picDiv.setAttribute('id', 'picdiv');
                         var dataDiv = document.createElement("div");
                         dataDiv.setAttribute('id', 'datadiv');
-                        destDiv.appendChild(picDiv);
-                        destDiv.appendChild(dataDiv);
-                        picDiv.appendChild(brewPic);
-                        dataDiv.appendChild(brewName);
-                        dataDiv.appendChild(brewAdd);
-                        dataDiv.appendChild(brewPhone);
-                        dataDiv.appendChild(brewEmail);
-                        dataDiv.appendChild(brewRating);
+                        var blockDiv = document.createElement("div");
+                        blockDiv.setAttribute('id', 'blockdiv');
+                        blockDiv.setAttribute('class','row');
+                        var destDiv = document.getElementById('datacontent');
+                            destDiv.appendChild(blockDiv);
+                            blockDiv.appendChild(picDiv);
+                            blockDiv.appendChild(dataDiv);
+                            picDiv.appendChild(brewPic);
+                            dataDiv.appendChild(brewName);
+                            dataDiv.appendChild(brewAdd);
+                            dataDiv.appendChild(brewPhone);
+                            dataDiv.appendChild(brewRating);
                     }
                 }
             }

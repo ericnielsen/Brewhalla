@@ -6,13 +6,17 @@ body {
     background-size: cover;
 }
 
+a {
+    color:white;
+}
+
 #title {
-    color:red;
+    color:white;
     font-size:48px;
 }
 
 #subtitle {
-    color:red;
+    color:white;
     font-size:36px;
     margin-top:100px;
 }
@@ -35,27 +39,52 @@ body {
 }
 
 #message {
+    position:relative;
+    left:100px;
     font-size:24px;
-    margin-bottom:100px;
+    margin-bottom:10px;
     margin-top:50px;
+    color:black;
 }
 
 #datacontent {
     margin-bottom: -250px;
+    color:black;
+}
+
+#blockdiv {
+    border:solid white 1px;
+    width:50%;
+    height:200px;
+    margin-bottom:10px;
+    background-color:#6D361F;
+    color:white;
 }
 
 #picdiv {
     display: inline-block;
+    margin-left:35px;
+    margin-top:50px;
+}
+
+#pic {
+    border: solid white 1px;
 }
 
 #datadiv {
     position:relative;
-    left:200px;
+    left:170px;
+    width:70%;
     bottom:130px;
-    width: 50%;
+
 }
 
 .nametitle {
+    position:relative;
+    left:100px;
+    font-size:16px;
     font-weight:bold;
+    text-decoration:underline;
     text-align:left;
+    color:white;
 }
