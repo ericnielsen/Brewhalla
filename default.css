@@ -1,3 +1,13 @@
+@font-face {
+    font-family: boldviking;
+    src: url(Norse-Bold.otf);
+}
+
+@font-face {
+    font-family: viking;
+    src: url(Norse.otf);
+}
+
 body {
     background: url(beerpic.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -6,19 +16,22 @@ body {
     background-size: cover;
 }
 
-a {
-    color:white;
-}
-
 #title {
+    margin-top:100px;
     color:white;
-    font-size:48px;
+    font-size:108px;
+    text-shadow:0px 0px 10px red;;
+    font-family:boldviking;
+    text-align:center;
 }
 
 #subtitle {
     color:white;
-    font-size:36px;
+    font-size:56px;
     margin-top:100px;
+    text-shadow:0px 0px 7px red;
+    font-family:boldviking;
+    text-align:center;
 }
 
 #listdiv {
@@ -29,14 +42,29 @@ a {
     color:red;
 }
 
-#dropdownMenu1 {
-    position:relative;
-    left:200px;
+#listdiv {
+    text-align:center;
 }
 
-#dropdownlist {
-    left:200px;
+#dropdownMenu1{
+    width:220px;
+    font-size:28px;
+    font-family:boldviking;
+    color:#6D361F;
+    background-color: white;
+    margin-top:50px;
+    border: #6D361F 5px solid;
+    text-shadow:0px 0px 2px red;
+    box-shadow: 0px 0px 10px red;
 }
+
+#dropdownlist{
+    left:480px;
+    font-family:viking;
+    font-size:24px;
+    color: #6D361F;
+}
+
 
 #message {
     position:relative;
