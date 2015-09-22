@@ -4,6 +4,7 @@ var path = require('path');
 var searchData = require('./search.js');
 
 app.use('/search', searchData);
+app.use(express.static('/'));
 
 app.get('/', function(req, res) {
 res.sendFile(path.join(__dirname + '/index.html'));
