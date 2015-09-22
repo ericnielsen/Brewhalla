@@ -18,7 +18,8 @@ getList[0].addEventListener('click', function(event) {
                 if (dataCity == term) {
                     for (var x = 0; x < dataObject.name[x].length; x++) {
                         var brewPic = document.createElement("p");
-                        brewPic.innerHTML = "<img id = 'pic' src =" + dataObject.image_url + ">";
+                        brewPic.setAttribute('class', 'picloc');
+                        brewPic.innerHTML = "<img class = 'pic' src =" + dataObject.image_url + ">";
                         var brewName = document.createElement("p");
                         brewName.setAttribute('class','nametitle');
                         brewName.innerHTML = "<a href=" + dataObject.url + ">" + dataObject.name +'</a>';
@@ -27,7 +28,7 @@ getList[0].addEventListener('click', function(event) {
                         var brewPhone = document.createElement("p");
                         brewPhone.innerHTML = "Phone Number: " + dataObject.phone;
                         var brewRating = document.createElement("p");
-                        brewRating.innerHTML = "Yelp Rating: " + "<img src =" + dataObject.rating_img_url_large + ">";
+                        brewRating.innerHTML = "YelpRating: " + "<img src =" + dataObject.rating_img_url_large + ">";
                         var picDiv = document.createElement("div");
                         picDiv.setAttribute('id', 'picdiv');
                         var dataDiv = document.createElement("div");
