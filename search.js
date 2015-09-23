@@ -18,7 +18,6 @@ yelpSearch.get('/data/:term', function(req,res){
         limit:"20",
         category_filter: "breweries",
         radius_filter: "40000"
-
         }).then( function(data) {
          res.send(data);
     });

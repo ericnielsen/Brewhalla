@@ -1,60 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-  <link type="text/css" rel="stylesheet" href="default.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <meta http-equiv="X-UA-Compatible"content="IE=Edge" charset="UTF-8">
+  <head>
+    <link type="text/css" rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible"content="IE=Edge" charset="UTF-8">
   <title>Brewhalla</title>
-</head>
-<body>
-<div class= "container">
-  <div class = "row">
-    <h1 id="title">Welcome to Brewhalla</h1>
-  </div>
-  <div class = "row">
-    <h3 id="subtitle">Orange County's Brewery Hub</h3>
-  </div>
-  <div id="listdiv" class = "row">
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Find a Brewery
-        <span class="caret"></span>
-      </button>
-      <ul id="dropdownlist" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#" rel="first"><div class = "cities" id ="aliso" data-nav="one">Aliso Viejo</div></a></li>
-        <li><a href="#" rel="second"><div class = "cities" id= "anaheim" data-nav="two">Anaheim</div></a></li>
-        <li><a href="#" rel="third"><div class = "cities" id="buena">Buena Park</div></a></li>
-        <li><a href="#" rel="fourth"><div class = "cities" id="costa">Costa Mesa</div></a></li>
-        <li><a href="#" rel="fifth"><div class = "cities" id ="cypress">Cypress</div></a></li>
-        <li><a href="#" rel="sixth"><div class = "cities" id ="fullerton">Fullerton</div></a></li>
-        <li><a href="#" rel="seventh"><div class = "cities" id ="garden">Garden Grove</div></a></li>
-        <li><a href="#" rel="eight"><div class = "cities" id="hb">Huntington Beach</div></a></li>
-        <li><a href="#" rel="ninth"><div class = "cities" id= "irvine">Irvine</div></a></li>
-        <li><a href="#" rel="tenth"><div class = "cities" id ="lake">Lake Forest</div></a></li>
-        <li><a href="#" rel="eleventh"><div class = "cities" id ="mission">Mission Viejo</div></a></li>
-        <li><a href="#" rel="twelve"><div class = "cities" id ="newport">Newport Beach</div></a></li>
-        <li><a href="#" rel="thirteenth"><div class = "cities" id ="orange">Orange</div></a></li>
-        <li><a href="#" rel="fourteenth"><div class = "cities" id ="sc">San Clemente</div></a></li>
-        <li><a href="#" rel="fifteenth"><div class = "cities" id ="sjc">San Juan Capistrano</div></a></li>
-        <li><a href="#" rel="sixteenth"><div class = "cities" id ="sa">Santa Ana</div></a></li>
-        <li><a href="#" rel="seventeenth"><div class = "cities" id ="tustin">Tustin</div></a></li>
-        <li><a href="#" rel="eighteenth"><div class = "cities" id ="westminister">Westminister</div></a></li>
-        <li><a href="#" rel="nineteenth"><div class = "cities" id ="yorba">Yorba Linda</div></a><li>
-      </ul>
+  </head>
+  <body>
+    <div class= "container">
+      <div class = "row">
+        <h1 id="title">Welcome to Brewhalla</h1>
+      </div>
+      <div class = "row">
+        <h3 id="subtitle">Orange County's Brewery Hub</h3>
+      </div>
+      <div id="listdiv" class = "row">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Find a Brewery
+            <span class="caret"></span>
+          </button>
+          <ul id="dropdownlist" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#"><div class ="cities">Aliso Viejo</div></a></li>
+            <li><a href="#"><div class ="cities">Anaheim</div></a></li>
+            <li><a href="#"><div class ="cities">Buena Park</div></a></li>
+            <li><a href="#"><div class ="cities">Costa Mesa</div></a></li>
+            <li><a href="#"><div class ="cities">Cypress</div></a></li>
+            <li><a href="#"><div class ="cities">Fullerton</div></a></li>
+            <li><a href="#"><div class ="cities">Garden Grove</div></a></li>
+            <li><a href="#"><div class ="cities">Huntington Beach</div></a></li>
+            <li><a href="#"><div class = "cities">Irvine</div></a></li>
+            <li><a href="#"><div class = "cities">Lake Forest</div></a></li>
+            <li><a href="#"><div class = "cities">Mission Viejo</div></a></li>
+            <li><a href="#"><div class = "cities">Newport Beach</div></a></li>
+            <li><a href="#"><div class = "cities">Orange</div></a></li>
+            <li><a href="#"><div class = "cities">San Clemente</div></a></li>
+            <li><a href="#"><div class = "cities">San Juan Capistrano</div></a></li>
+            <li><a href="#"><div class = "cities">Santa Ana</div></a></li>
+            <li><a href="#"><div class = "cities">Tustin</div></a></li>
+            <li><a href="#"><div class = "cities">Westminister</div></a></li>
+            <li><a href="#"><div class = "cities">Yorba Linda</div></a><li>
+          </ul>
+        </div>
+      </div>
+      <div class = "row" id ="message"></div>
     </div>
-  </div>
-  <div class = "row" id ="message"></div>
-</div>
-
-<div id= "parentdatacontainer" class = "container">
-
-
-    <div id="datacontent"></div>
-
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="action.js"></script>
-</body>
+    <div id= "parentdatacontainer" class = "container">
+      <div id="datacontent"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="action.js"></script>
+  </body>
 </html>
