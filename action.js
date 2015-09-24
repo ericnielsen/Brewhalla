@@ -20,7 +20,7 @@ getList[0].addEventListener('click', function(event) {
                     for (var x = 0; x < dataObject.name[x].length; x++) {
                         var brewPic = document.createElement("div");
                         brewPic.setAttribute('class', 'picloc');
-                        brewPic.innerHTML = "<img class = 'pic' src =" + dataObject.image_url + ">";
+                        brewPic.innerHTML = "<img class = 'pic' src=" + dataObject.image_url + ">";
                         var brewName = document.createElement("p");
                         brewName.setAttribute('class','nametitle');
                         brewName.innerHTML = "<a href=" + dataObject.url + ">" + dataObject.name +'</a>';

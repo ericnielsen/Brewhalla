@@ -12,8 +12,7 @@ yelpSearch.get('/data/:term', function(req,res){
         }});
     myYelp.search(
     {
-        term: req.param.term,
-        location: "Orange County" ,
+        location: req.params.term ,
         sort: "1",
         limit:"20",
         category_filter: "breweries",

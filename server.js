@@ -3,18 +3,18 @@ var app = express();
 var path = require('path');
 var searchData = require('./search.js');
 
-app.use('/search', searchData);
+app.use('/search',searchData);
 app.use(express.static('image'));
 
-app.get('/', function(req, res) {
+app.get('/',function(req, res){
 res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/default.css', function(req, res) {
+app.get('/default.css',function(req, res){
 res.sendFile(path.join(__dirname + '/default.css'));
 });
 
-app.get('/action.js', function(req, res) {
+app.get('/action.js',function(req, res){
 res.sendFile(path.join(__dirname + '/action.js'));
 });
 
