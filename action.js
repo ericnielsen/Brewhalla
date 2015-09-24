@@ -3,7 +3,8 @@ getList[0].addEventListener('click', function(event) {
         var target = event.target;
         var messageText = 'Breweries located in ' + target.textContent + ':';
         var messageDiv = document.getElementById('message');
-        messageDiv.innerHTML = messageText;
+        messageDiv.textContent = messageText;
+
         var term =event.target.textContent;
         var request = new XMLHttpRequest();
         request.open('GET', 'http://localhost:1337/search/data/' + term);
@@ -25,9 +26,9 @@ getList[0].addEventListener('click', function(event) {
                         brewName.setAttribute('class','nametitle');
                         brewName.innerHTML = "<a href=" + dataObject.url + ">" + dataObject.name +'</a>';
                         var brewAdd = document.createElement("p");
-                        brewAdd.innerHTML = "Address: " + dataObject.location.display_address;
+                        brewAdd.textContent = "Address: " + dataObject.location.display_address;
                         var brewPhone = document.createElement("p");
-                        brewPhone.innerHTML = "Phone Number: " + dataObject.phone;
+                        brewPhone.textContent = "Phone Number: " + dataObject.phone;
                         var brewRating = document.createElement("p");
                         brewRating.innerHTML = "YelpRating: " + "<img src =" + dataObject.rating_img_url_large + ">";
                         var picDiv = document.createElement("div");
@@ -39,6 +40,7 @@ getList[0].addEventListener('click', function(event) {
                         var blockDiv = document.createElement("div");
                         blockDiv.setAttribute('id', 'blockdiv');
                         blockDiv.setAttribute('class',' row');
+
                         var destDiv = document.getElementById('datacontent');
                             destDiv.appendChild(blockDiv);
                             blockDiv.appendChild(picDiv);
