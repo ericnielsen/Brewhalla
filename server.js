@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var searchData = require('./search.js');
+var express=require('express');
+var app=express();
+var path=require('path');
+var searchData=require('./search.js');
 
 app.use('/search',searchData);
 app.use(express.static('image'));

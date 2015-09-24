@@ -1,9 +1,9 @@
-var express = require('express');
-var yelpSearch = express.Router();
-var yelp = require("node-yelp");
+var express=require('express');
+var yelpSearch=express.Router();
+var yelp=require("node-yelp");
 
 yelpSearch.get('/data/:term', function(req,res){
-    var myYelp = yelp.createClient({
+    var myYelp=yelp.createClient({
         oauth: {
             "consumer_key": "XBSJFJsDjNgvoyr2LKzZng",
             "consumer_secret": "M6MxbbPJ1MMSsnDbFVDxkTPjujk",
@@ -13,10 +13,10 @@ yelpSearch.get('/data/:term', function(req,res){
     myYelp.search(
     {
         location: req.params.term ,
-        sort: "1",
+
         limit:"20",
         category_filter: "breweries",
-        radius_filter: "40000"
+        radius_filter: "30000"
         }).then( function(data) {
          res.send(data);
     });
