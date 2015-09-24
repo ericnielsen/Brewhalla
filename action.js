@@ -1,5 +1,5 @@
-var scrolldown = document.getElementById('dropdownMenu1');
-scrolldown.addEventListener('click', function(e) {
+var viewShift = document.getElementById('dropdownMenu1');
+viewShift.addEventListener('click', function() {
     window.scrollTo(0, 400);
 });
 
