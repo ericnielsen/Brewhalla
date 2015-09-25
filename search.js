@@ -13,7 +13,6 @@ yelpSearch.get('/data/:term', function(req,res){
     myYelp.search(
     {
         location: req.params.term ,
-
         limit:"20",
         category_filter: "breweries",
         radius_filter: "30000"

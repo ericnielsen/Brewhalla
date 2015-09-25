@@ -69,67 +69,41 @@ body {
 
 #message {
     margin-top:100px;
-    margin-bottom:10px;
+    margin-bottom:30px;
     text-align:center;
-    text-shadow: 0 0 10px black;
-    font-size:48px;
+    text-shadow: 0 0 10px red;
+    font-size:84px;
     font-family:boldviking;
     color:white;
 }
 
-#datacontent {
-    margin-bottom:-250px;
-    color:black;
-}
-
-#blockdiv {
+#datadiv {
+    font-size:48px;
+    font-family:viking;
+    text-align:center;
     position:relative;
     margin-right:auto;
     margin-left:auto;
     margin-bottom:10px;
     height:auto;
-    width:60%;
+    width:100%;
     background-color:#6D361F;
     border: white 5px solid;
     box-shadow:0 0 5px black;
     color:white;
-}
-
-#picdiv {
-    padding-right:70px;
-}
-
-#datadiv {
-    margin-top:7%;
-    padding-left:70px;
-    padding-right:0px;
-}
-
-.pic {
-    position:relative;
-    width:150px;
-    height:150px;
-    border: white 2px solid;
-}
-
-.picloc {
-    margin-top:30%;
-    margin-bottom:30%;
-    margin-left:30%;
-    height:90%;
-}
-
-.nametitle {
-    font-size:16px;
-    font-weight:bold;
-    text-decoration:underline;
-    color:white;
+    text-shadow: 0 0 10px red;
 }
 
 .nametitle a {
-    font-size:32px;
+    font-size:56px;
     font-family:viking;
     text-decoration:underline;
-    text-shadow: 1px 1px 1px black;
     color:white;
+    text-shadow: 0 0 10px red;
+}
+
+#googleAPI {
+    position:relative;
+    height:400px;
+    width:90%;
 }
