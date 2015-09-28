@@ -54,10 +54,12 @@ function mapLaunch() {
         target.style.color ="black";
         target.insertAdjacentHTML('beforeend', '<iframe id= "googleAPI" width="1000" height="1000" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + target.textContent + '&key=AIzaSyCy3X8OYdnCP_zrvCXHOCeCLQwktEMhJdA"></iframe>')
         var storage = target.textContent;
-        target.addEventListener('mouseleave', function() {
+        function clearMap(){
             target.textContent = storage;
             target.style.color="white";
-        });
+        }
+        target.addEventListener('mouseleave', function() {
+            clearMap() },true);
     }
 }
 var viewShift = document.getElementById('dropdownMenu1');
