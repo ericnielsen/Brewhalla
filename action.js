@@ -11,7 +11,7 @@ function displayCities(event) {
     function newRequest(){
         var resetBrewinfo=document.getElementById('datacontent');
         resetBrewinfo.textContent="";
-        window.scrollTo(0,400);
+        window.scrollTo(0,500);
         var clickedName=event.target;
         var messageText='Breweries located in ' + clickedName.textContent + ':';
         var messageDiv=document.getElementById('message');
@@ -26,12 +26,12 @@ function displayCities(event) {
                         brewName.setAttribute('class','nametitle');
                         brewName.insertAdjacentHTML('beforeend', "<a href=" + dataObject.url + ">" + dataObject.name +'</a>');
                     var brewAdd = document.createElement("p");
-                        brewAdd.textContent = "Address: " + dataObject.location.display_address;
+                        brewAdd.textContent = "Address : " + dataObject.location.display_address;
                         brewAdd.setAttribute('class','maplaunch');
                     var brewPhone = document.createElement("p");
-                        brewPhone.textContent = "Phone Number: " + dataObject.phone;
+                        brewPhone.textContent = "Phone Number : " + dataObject.phone;
                     var brewRating = document.createElement("p");
-                        brewRating.insertAdjacentHTML('beforeend', "YelpRating:  " + "<img src =" + dataObject.rating_img_url_large + ">");
+                        brewRating.insertAdjacentHTML('beforeend', "Yelp  Rating :  " + "<img src =" + dataObject.rating_img_url_large + ">");
                     var dataDiv = document.createElement("div");
                         dataDiv.setAttribute('class', ' col-md-8');
                         dataDiv.setAttribute('id','datadiv');
