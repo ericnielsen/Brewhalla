@@ -1,8 +1,6 @@
-var viewShift = document.getElementById('dropdownMenu1');
-viewShift.addEventListener('click', function() {
+function windowShift() {
     window.scrollTo(0, 400);
-});
-
+}
 function displayCities(event) {
     var term =event.target.textContent;
     var request = new XMLHttpRequest();
@@ -23,24 +21,24 @@ function displayCities(event) {
             if (dataCity==term){
                 for (var x= 0; x < dataObject.name[x].length; x++){
                     var brewName = document.createElement("p");
-                        brewName.setAttribute('class','nametitle');
-                        brewName.insertAdjacentHTML('beforeend', "<a href=" + dataObject.url + ">" + dataObject.name +'</a>');
+                    brewName.setAttribute('class','nametitle');
+                    brewName.insertAdjacentHTML('beforeend', "<a href=" + dataObject.url + ">" + dataObject.name +'</a>');
                     var brewAdd = document.createElement("p");
-                        brewAdd.textContent = "Address : " + dataObject.location.display_address;
-                        brewAdd.setAttribute('class','maplaunch');
+                    brewAdd.textContent = "Address : " + dataObject.location.display_address;
+                    brewAdd.setAttribute('class','maplaunch');
                     var brewPhone = document.createElement("p");
-                        brewPhone.textContent = "Phone Number : " + dataObject.phone;
+                    brewPhone.textContent = "Phone Number : " + dataObject.phone;
                     var brewRating = document.createElement("p");
-                        brewRating.insertAdjacentHTML('beforeend', "Yelp  Rating :  " + "<img src =" + dataObject.rating_img_url_large + ">");
+                    brewRating.insertAdjacentHTML('beforeend', "Yelp  Rating :  " + "<img src =" + dataObject.rating_img_url_large + ">");
                     var dataDiv = document.createElement("div");
-                        dataDiv.setAttribute('class', ' col-md-8');
-                        dataDiv.setAttribute('id','datadiv');
+                    dataDiv.setAttribute('class', ' col-md-8');
+                    dataDiv.setAttribute('id','datadiv');
                     var destDiv = document.getElementById('datacontent');
                     destDiv.appendChild(dataDiv);
-                            dataDiv.appendChild(brewName);
-                            dataDiv.appendChild(brewAdd);
-                            dataDiv.appendChild(brewPhone);
-                            dataDiv.appendChild(brewRating);
+                    dataDiv.appendChild(brewName);
+                    dataDiv.appendChild(brewAdd);
+                    dataDiv.appendChild(brewPhone);
+                    dataDiv.appendChild(brewRating);
                 }
             }
         }
@@ -49,11 +47,6 @@ function displayCities(event) {
         newRequest(theEvent);
     }, false);
 }
-var cityList = document.getElementsByTagName('ul');
-cityList[0].addEventListener('click', function(event) {
-    displayCities(event);
-}, false);
-
 function mapLaunch() {
     var target = event.target;
     var targetData = target.getAttribute('class');
@@ -67,6 +60,14 @@ function mapLaunch() {
         });
     }
 }
+var viewShift = document.getElementById('dropdownMenu1');
+viewShift.addEventListener('click', function() {
+    windowShift()
+}, true);
+var cityList = document.getElementsByTagName('ul');
+cityList[0].addEventListener('click', function(event) {
+    displayCities(event);
+}, false);
 var addressLoc = document.getElementById('datacontent');
 addressLoc.addEventListener('mouseenter', function(event){
     mapLaunch(event)
