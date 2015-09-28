@@ -1,3 +1,21 @@
+function createList() {
+    var cities = ['Aliso Viejo','Anaheim', 'Costa Mesa', 'Fullerton', 'Garden Grove','Huntington Beach', 'Irvine',
+        'Mission Viejo', 'Newport Beach','Orange', 'San Clemente', 'Santa Ana', 'Tustin'];
+    var dropdownlist =document.getElementById('dropdownlist');
+    for (var i = 0; i < cities.length; i++) {
+        var cityText = document.createTextNode(cities[i]);
+        var cityLink=document.createElement("a");
+        cityLink.setAttribute('href','#');
+        var cityDiv = document.createElement("div");
+        cityDiv.setAttribute('class','cities');
+        var listItem = document.createElement("li");
+        dropdownlist.appendChild(listItem);
+        listItem.appendChild(cityLink);
+        cityLink.appendChild(cityDiv);
+        cityDiv.appendChild(cityText);
+    }
+}
+
 function windowShift() {
     window.scrollTo(0, 400);
 }
@@ -56,7 +74,9 @@ function mapLaunch() {
     var targetData = target.getAttribute('class');
     if (targetData == 'maplaunch'){
         target.style.color ="black";
-        target.insertAdjacentHTML('beforeend','<iframe id="googleAPI" width="1000" height="1000" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + target.textContent + '&key=AIzaSyCy3X8OYdnCP_zrvCXHOCeCLQwktEMhJdA"></iframe>')
+        target.insertAdjacentHTML('beforeend','<iframe id="googleAPI" width="1000" height="1000" frameborder="0" ' +
+            'style="border:0" src="https://www.google.com/maps/embed/v1/place?' +
+            'q=' + target.textContent + '&key=AIzaSyCy3X8OYdnCP_zrvCXHOCeCLQwktEMhJdA"></iframe>');
         var storage = target.textContent;
         function clearMap(){
             target.textContent=storage;
@@ -77,4 +97,8 @@ cityList[0].addEventListener('click', function(event) {
 var addressLoc = document.getElementById('datacontent');
 addressLoc.addEventListener('mouseenter', function(event){
     mapLaunch(event)
+}, true);
+var wholePage = document;
+wholePage.addEventListener('load', function(){
+    createList()
 }, true);
