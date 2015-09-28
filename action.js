@@ -36,7 +36,7 @@ function displayCities(event) {
                         dataDiv.setAttribute('class', ' col-md-8');
                         dataDiv.setAttribute('id','datadiv');
                     var destDiv = document.getElementById('datacontent');
-                        destDiv.appendChild(dataDiv);
+                    destDiv.appendChild(dataDiv);
                             dataDiv.appendChild(brewName);
                             dataDiv.appendChild(brewAdd);
                             dataDiv.appendChild(brewPhone);
