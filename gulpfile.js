@@ -2,6 +2,10 @@ var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var nodemon = require('gulp-nodemon');
 var uglify = require('gulp-uglify');
+var minifyHTML = require('gulp-minify-html');
+var minifyCss = require('gulp-minify-css');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 gulp.task('start',function() {
     nodemon ({
@@ -17,8 +21,34 @@ gulp.task('test',function(){
 gulp.task('compress', function() {
     return gulp.src("*.js")
         .pipe(uglify())
-        .pipe(gulp.dest("public/dist/"));
+        .pipe(gulp.dest('public/dist/'));
 });
 
+gulp.task('minify-html', function() {
+  var opts = {
+    conditionals: true,
+    spare:true
+  };
 
-gulp.task('default', ['start', 'compress']);
+  return gulp.src('index.html')
+    .pipe(minifyHTML(opts))
+    .pipe(gulp.dest('public/dist/'));
+});
+
+gulp.task('minify-css', function() {
+  return gulp.src('default.css')
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('public/dist/'));
+});
+
+gulp.task('images', function () {
+    return gulp.src('image/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('public/dist/image'));
+});
+
+gulp.task('default', ['start', 'compress', 'minify-html', 'minify-css', 'images']);

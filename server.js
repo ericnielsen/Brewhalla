@@ -7,15 +7,15 @@ app.use('/search',searchData);
 app.use(express.static('image'));
 
 app.get('/',function(req, res){
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/public/dist/index.html'));
 });
 
 app.get('/default.css',function(req, res){
-    res.sendFile(path.join(__dirname + '/default.css'));
+    res.sendFile(path.join(__dirname + '/public/dist/default.css'));
 });
 
 app.get('/action.js',function(req, res){
-    res.sendFile(path.join(__dirname + '/action.js'));
+    res.sendFile(path.join(__dirname + '/public/dist/action.js'));
 });
 
 app.listen(1339);
