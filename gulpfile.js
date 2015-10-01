@@ -6,6 +6,7 @@ var minifyHTML = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var browserSync = require('browser-sync').create();
 
 gulp.task('start',function() {
     nodemon ({
@@ -49,6 +50,12 @@ gulp.task('images', function () {
             use: [pngquant()]
         }))
         .pipe(gulp.dest('public/dist/image'));
+});
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: "localhost:1339"
+    });
 });
 
 gulp.task('default', ['start', 'compress', 'minify-html', 'minify-css', 'images']);

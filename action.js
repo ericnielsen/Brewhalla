@@ -15,16 +15,14 @@ function createList() {
         cityDiv.appendChild(cityText);
     }
 }
-
 function windowShift() {
     window.scrollTo(0, 400);
 }
 function displayCities(event) {
     var term =event.target.textContent;
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://localhost:1337/search/data/' + term);
+    request.open('GET', 'http://localhost:1339/search/data/' + term);
     request.send();
-
     function newRequest(){
         var resetBrewinfo=document.getElementById('datacontent');
         resetBrewinfo.textContent="";
@@ -74,9 +72,16 @@ function mapLaunch() {
     var targetData = target.getAttribute('class');
     if (targetData == 'maplaunch'){
         target.style.color ="black";
-        target.insertAdjacentHTML('beforeend','<iframe id="googleAPI" width="1000" height="1000" frameborder="0" ' +
-            'style="border:0" src="https://www.google.com/maps/embed/v1/place?' +
-            'q=' + target.textContent + '&key=AIzaSyCy3X8OYdnCP_zrvCXHOCeCLQwktEMhJdA"></iframe>');
+        target.insertAdjacentHTML('beforeend','<iframe ' +
+            'id="googleAPI" ' +
+            'width="1000" ' +
+            'height="1000" ' +
+            'frameborder="0" ' +
+            'style="border:0" ' +
+            'src="https://www.google.com/maps/embed/v1/place?' +
+            'q=' + target.textContent +
+            '&key=AIzaSyCy3X8OYdnCP_zrvCXHOCeCLQwktEMhJdA">' +
+            '</iframe>');
         var storage = target.textContent;
         function clearMap(){
             target.textContent=storage;
@@ -86,6 +91,10 @@ function mapLaunch() {
             clearMap() },true);
     }
 }
+var wholePage = document;
+wholePage.addEventListener('load', function(){
+    createList()
+}, true);
 var viewShift = document.getElementById('dropdownMenu1');
 viewShift.addEventListener('click', function() {
     windowShift()
@@ -97,8 +106,4 @@ cityList[0].addEventListener('click', function(event) {
 var addressLoc = document.getElementById('datacontent');
 addressLoc.addEventListener('mouseenter', function(event){
     mapLaunch(event)
-}, true);
-var wholePage = document;
-wholePage.addEventListener('load', function(){
-    createList()
 }, true);
