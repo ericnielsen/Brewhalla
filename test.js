@@ -1,12 +1,26 @@
-var request = require('supertest')('http://localhost:1337');
+var request = require('supertest')('http://localhost:1339');
 var should = require('should');
 var express = require('express');
 
 describe('Express Backend Tests', function() {
-    it('200', function(done) {
+    it('HTML: Functional', function(done) {
         request.get('/')
-        .expect(200)
-        .end(done)
+            .expect(200)
+            .end(done)
     });
-    console.log('Test complete');
+    it('CSS: Functional', function(done) {
+        request.get('/default.css')
+            .expect(200)
+            .end(done)
+    });
+    it('Javascript: Functional', function(done) {
+        request.get('/action.js')
+            .expect(200)
+            .end(done)
+    });
+    it('Yelp API: Functional', function(done) {
+        request.get('/search/data/anaheim')
+            .expect(200)
+            .end(done)
+    });
 });

@@ -26,20 +26,20 @@ gulp.task('compress', function() {
 });
 
 gulp.task('minify-html', function() {
-  var opts = {
-    conditionals: true,
-    spare:true
-  };
+    var opts = {
+        conditionals: true,
+        spare:true
+    };
 
-  return gulp.src('index.html')
-    .pipe(minifyHTML(opts))
-    .pipe(gulp.dest('public/dist/'));
+    return gulp.src('index.html')
+        .pipe(minifyHTML(opts))
+        .pipe(gulp.dest('public/dist/'));
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('default.css')
-    .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(gulp.dest('public/dist/'));
+    return gulp.src('default.css')
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest('public/dist/'));
 });
 
 gulp.task('images', function () {
