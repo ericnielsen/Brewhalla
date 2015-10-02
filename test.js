@@ -23,4 +23,9 @@ describe('Express Backend Tests', function() {
             .expect(200)
             .end(done)
     });
+    it('Static Route: Functional', function(done) {
+        request.get('/beerpic.jpg')
+            .expect(200)
+            .end(done)
+    });
 });
