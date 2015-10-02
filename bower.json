@@ -1,0 +1,22 @@
+{
+  "name": "brewhalla",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ericnielsen/Brewhalla",
+  "authors": [
+    "Eric Nielsen <eniel002@gmail.com>"
+  ],
+  "description": "local brewery source",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
