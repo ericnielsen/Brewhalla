@@ -58,4 +58,4 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('default', ['start', 'compress', 'minify-html', 'minify-css', 'images']);
+gulp.task('default', ['start', 'compress', 'minify-html', 'minify-css', 'images', 'browser-sync']);
