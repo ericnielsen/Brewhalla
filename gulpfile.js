@@ -7,6 +7,7 @@ var minifyCss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var browserSync = require('browser-sync').create();
+var wiredep = require('wiredep').stream;
 
 gulp.task('start',function() {
     nodemon ({
@@ -56,6 +57,15 @@ gulp.task('browser-sync', function() {
     browserSync.init({
         proxy: "localhost:1339"
     });
+});
+
+gulp.task('bower', function () {
+  gulp.src('index.html')
+    .pipe(wiredep({
+      optional: 'configuration',
+      goes: 'here'
+    }))
+    .pipe(gulp.dest('./public/dist'));
 });
 
 gulp.task('default', ['start', 'compress', 'minify-html', 'minify-css', 'images', 'browser-sync']);
