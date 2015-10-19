@@ -13,8 +13,13 @@ describe('Express Backend Tests', function() {
             .expect(200)
             .end(done)
     });
-    it('Javascript: Functional', function(done) {
+    it('JavascriptI: Functional', function(done) {
         request.get('/action.js')
+            .expect(200)
+            .end(done)
+    });
+    it('Javascript II: Functional', function(done) {
+        request.get('/geoGet.js')
             .expect(200)
             .end(done)
     });

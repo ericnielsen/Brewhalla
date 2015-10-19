@@ -70,5 +70,4 @@ gulp.task('bower', function () {
 
 gulp.task('default', ['start', 'compress', 'minify-html', 'minify-css', 'images', 'browser-sync']);
 
-require('require-dir')('./gulp');
-
+//require('require-dir')('./gulp');
