@@ -6,7 +6,7 @@ function displayLocation() {
     else {
         console.log('Geolocation is not supported for this Browser/OS version yet.');
     }
-}git
+}
 window.addEventListener('load', function(event) {
     displayLocation(event);
 }, false);
