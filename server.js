@@ -51,5 +51,9 @@ app.get('/action.js',function(req, res){
     res.sendFile(path.join(__dirname + '/public/dist/action.js'));
 });
 
+app.get('/geoGet.js',function(req, res){
+    res.sendFile(path.join(__dirname + '/geoGet.js'));
+});
+
 app.listen(1339);
 console.log('The port is working');
