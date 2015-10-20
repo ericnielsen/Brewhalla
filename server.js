@@ -8,7 +8,6 @@ var mongoose = require('mongoose');
 //var userRouter = express.Router();
 //userRouter.route('/users/:user_id');
 //userRouter.use(function(req, res, next) {
-//console.log('Somebody just came to our app!');
 //next();
 //});
 app.use(cookieParser());
@@ -21,7 +20,7 @@ app.use(function (req, res, next) {
   {
     var randomNumber=Math.random().toString();
     randomNumber=randomNumber.substring(2,randomNumber.length);
-      res.cookie('cookieName',randomNumber, { maxAge: 900000, httpOnly: true });
+      res.cookie('cookieName',randomNumber, { maxAge: 900000000, httpOnly: true });
       console.log('New cookie created');
       mongoose.connect('mongodb://localhost/test');
       var db = mongoose.connection;
@@ -57,9 +56,9 @@ app.get('/default.css',function(req, res){
 app.get('/action.js',function(req, res){
     res.sendFile(path.join(__dirname + '/action.js'));
 });
-//app.get('/geoGet.js',function(req, res){
-    //res.sendFile(path.join(__dirname + '/geoGet.js'));
-//});
+app.get('/geoGet.js',function(req, res){
+    res.sendFile(path.join(__dirname + '/geoGet.js'));
+});
 
 //app.get('/users', function(req, res) {
 //res.send();
