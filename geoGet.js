@@ -18,7 +18,6 @@ function displayLocation() {
         console.log("latitude: " + position.coords.latitude);
         console.log("longitude: " + position.coords.longitude);
     }
-
 }
 window.addEventListener('load', function(event) {
     displayLocation(event);
