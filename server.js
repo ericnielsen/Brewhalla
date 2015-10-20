@@ -15,8 +15,7 @@ app.use(express.static('public/dist/image/'));
 app.use(function (req, res, next) {
  var cookie = req.cookies.cookieName;
  if (cookie === undefined) {
-   var randomNumber = Math.random().toString();
-   randomNumber = randomNumber.substring(2, randomNumber.length);
+   var randomNumber = Math.floor(Math.random() * 1000000000000000);
    res.cookie('cookieName', randomNumber, { maxAge: 900000000, httpOnly: true });
 
    var cookie = new Cookie({id:randomNumber});
