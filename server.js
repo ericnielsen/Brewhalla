@@ -6,19 +6,15 @@ var searchData=require('./public/dist/search.js');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
 //var userRouter = express.Router();
-
 //userRouter.route('/users/:user_id');
-
 //userRouter.use(function(req, res, next) {
 //console.log('Somebody just came to our app!');
 //next();
 //});
-
 app.use(cookieParser());
 //app.use('/user',locationData);
 app.use('/search',searchData);
 app.use(express.static('public/dist/image/'));
-
 app.use(function (req, res, next) {
   var cookie = req.cookies.cookieName;
   if (cookie === undefined)
@@ -55,11 +51,9 @@ app.use(express.static(__dirname + '/public'));
 app.get('/',function(req, res){
     res.sendFile(path.join(__dirname + '/index.html'));
 });
-
 //userRouter.get('/user', function(req, res) {
 //res.json({ message: 'Route works' });
 //});
-
 app.get('/default.css',function(req, res){
     res.sendFile(path.join(__dirname + '/default.css'));
 });
@@ -67,10 +61,9 @@ app.get('/default.css',function(req, res){
 app.get('/action.js',function(req, res){
     res.sendFile(path.join(__dirname + '/action.js'));
 });
-
-app.get('/geoGet.js',function(req, res){
-    res.sendFile(path.join(__dirname + '/geoGet.js'));
-});
+//app.get('/geoGet.js',function(req, res){
+    //res.sendFile(path.join(__dirname + '/geoGet.js'));
+//});
 
 //app.get('/users', function(req, res) {
 //res.send();
