@@ -39,10 +39,6 @@ app.use(function (req, res, next) {
       });
        addUser.name = randomNumber;
   }
-  else
-  {
-    console.log('Cookie all ready exists', cookie);
-  }
   next();
 });
 
