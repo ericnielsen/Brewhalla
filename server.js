@@ -2,6 +2,7 @@ var express=require('express');
 var app=express();
 var path=require('path');
 var searchData=require('./public/dist/search.js');
+var location=require('./location.js');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
 
@@ -10,6 +11,7 @@ var Cookie = mongoose.model('Cookie', {id: Number});
 
 app.use(cookieParser());
 app.use('/search', searchData);
+app.use('/location', location);
 app.use(express.static('public/dist/image/'));
 
 app.use(function (req, res, next) {
