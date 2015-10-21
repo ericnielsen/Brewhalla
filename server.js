@@ -15,16 +15,18 @@ app.use('/location', location);
 app.use(express.static('public/dist/image/'));
 
 app.use(function (req, res, next) {
- var cookie = req.cookies.cookieName;
- if (cookie === undefined) {
-   var randomNumber = Math.floor(Math.random() * 1000000000000000);
-   res.cookie('cookieName', randomNumber, { maxAge: 900000000, httpOnly: true });
+    var cookie = req.cookies.cookieName;
+    if (cookie === undefined) {
+        console.log('creating new cookies...');
+        var randomNumber = Math.floor(Math.random() * 1000000000000000);
+        res.cookie('cookieName', randomNumber, { maxAge: 900000000, httpOnly: true });
 
-   var cookie = new Cookie({id:randomNumber});
-   cookie.save(function (err) {
-   });
- }
- next();
+        var cookie = new Cookie({id:randomNumber});
+        cookie.save(function (err) {
+        });
+    }
+    else{console.log('cookies allready exist');}
+    next();
 });
 
 app.use(express.static(__dirname + '/public'));
@@ -39,8 +41,8 @@ app.get('/default.css',function(req, res){
 app.get('/action.js',function(req, res){
     res.sendFile(path.join(__dirname + '/action.js'));
 });
-app.get('/geoGet.js',function(req, res){
-    res.sendFile(path.join(__dirname + '/geoGet.js'));
+app.get('/geo.js',function(req, res){
+    res.sendFile(path.join(__dirname + '/geo.js'));
 });
 
 app.listen(1339);
