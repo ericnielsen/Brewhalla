@@ -4,20 +4,22 @@ var mongoose = require('mongoose');
 var Location = mongoose.model('Location', {id: Number, latitude: Number, longitude: Number});
 
 location.get('/:id/:lat/:long',function(req, res){
-var cookie = req.cookies.cookieName;
-    var copyCheck = Location.findOne({ 'id': cookie }, function (err, location) {
-        console.log(location.latitude);
-    });
-//console.log('updating profile..' + cookie);
-var location= new Location(
-        {
-            id:cookie,
-            latitude: req.params.lat,
-            longitude:req.params.long
+    var cookie = req.cookies.cookieName;
+    Location.findOne({ 'id': cookie }, function (err, location) {
+        if(typeof(location) !== 'undefined' && location) {
+        console.log('nothing happens');
         }
-    );
-location.save();
-res.send();
+        else {
+            var locationObject= new Location(
+                {
+                    id:cookie,
+                    latitude: req.params.lat,
+                    longitude:req.params.long
+                }
+            );
+            locationObject.save();
+            res.send();
+        }
+    });
 });
-
 module.exports = location;
