@@ -13,6 +13,19 @@ app.use(cookieParser());
 app.use('/search', searchData);
 app.use('/location', location);
 app.use(express.static('public/dist/image/'));
+app.use(express.static(__dirname + '/public'));
+
+
+app.get('/',function(req, res){
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+app.get('/default.css',function(req, res){
+    res.sendFile(path.join(__dirname + '/default.css'));
+});
+
+app.get('/action.js',function(req, res){
+    res.sendFile(path.join(__dirname + '/action.js'));
+});
 
 app.use(function (req, res, next) {
     var cookie = req.cookies.cookieName;
@@ -29,18 +42,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(express.static(__dirname + '/public'));
-
-app.get('/',function(req, res){
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
-app.get('/default.css',function(req, res){
-    res.sendFile(path.join(__dirname + '/default.css'));
-});
-
-app.get('/action.js',function(req, res){
-    res.sendFile(path.join(__dirname + '/action.js'));
-});
 app.get('/geo.js',function(req, res){
     res.sendFile(path.join(__dirname + '/geo.js'));
 });
