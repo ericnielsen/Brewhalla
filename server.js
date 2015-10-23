@@ -3,6 +3,7 @@ var app=express();
 var path=require('path');
 var searchData=require('./public/dist/search.js');
 var location=require('./location.js');
+var proximity=require('./proximity.js');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
 
@@ -12,6 +13,7 @@ var Cookie = mongoose.model('Cookie', {id: Number});
 app.use(cookieParser());
 app.use('/search', searchData);
 app.use('/location', location);
+app.use('/proximity', proximity);
 app.use(express.static('public/dist/image/'));
 app.use(express.static(__dirname + '/public'));
 
@@ -44,6 +46,14 @@ app.use(function (req, res, next) {
 
 app.get('/geo.js',function(req, res){
     res.sendFile(path.join(__dirname + '/geo.js'));
+});
+
+app.get('/proximity.js',function(req, res){
+    res.sendFile(path.join(__dirname + '/proximity.js'));
+});
+
+app.get('/recommendations.js',function(req, res){
+    res.sendFile(path.join(__dirname + '/recommendations.js'));
 });
 
 app.listen(1339);
