@@ -23,7 +23,6 @@ location.get('/:id/:lat/:long',function(req, res){
         }
     });
 });
-
 location.get('/data/:term', function(req,res){
     var myYelp=yelp.createClient({
         oauth: {
@@ -36,7 +35,7 @@ location.get('/data/:term', function(req,res){
     {
         ll: req.params.term,
         limit:20,
-        sort:1,
+        sort:0,
         category_filter:"breweries",
         radius_filter:"16000"
         }).then( function(data) {

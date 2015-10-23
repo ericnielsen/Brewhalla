@@ -24,6 +24,10 @@ function displayCities(event) {
     request.open('GET', 'http://localhost:1339/search/data/' + term);
     request.send();
     function newRequest(){
+        var clearRecdata=document.getElementById('reccontent');
+        clearRecdata.textContent="";
+        var clearRectext=document.getElementById('texthome');
+        clearRectext.textContent="";
         var resetBrewinfo=document.getElementById('datacontent');
         resetBrewinfo.textContent="";
         window.scrollTo(0,500);
@@ -39,18 +43,18 @@ function displayCities(event) {
             if (dataCity==term){
                 for (var brewAmount=0; brewAmount<dataObject.name[brewAmount].length;brewAmount++){
                     var brewName=document.createElement("p");
-                        brewName.setAttribute('class','nametitle');
-                        brewName.insertAdjacentHTML('beforeend', "<a href=" + dataObject.url + ">" + dataObject.name +'</a>');
+                    brewName.setAttribute('class','nametitle');
+                    brewName.insertAdjacentHTML('beforeend', "<a href=" + dataObject.url + ">" + dataObject.name +'</a>');
                     var brewAdd=document.createElement("p");
-                        brewAdd.textContent = "Address : " + dataObject.location.display_address;
-                        brewAdd.setAttribute('class','maplaunch');
+                    brewAdd.textContent = "Address : " + dataObject.location.display_address;
+                    brewAdd.setAttribute('class','maplaunch');
                     var brewPhone=document.createElement("p");
-                        brewPhone.textContent = "Phone Number : " + dataObject.phone;
+                    brewPhone.textContent = "Phone Number : " + dataObject.phone;
                     var brewRating=document.createElement("p");
-                        brewRating.insertAdjacentHTML('beforeend', "Yelp  Rating :  " + "<img src =" + dataObject.rating_img_url_large + ">");
+                    brewRating.insertAdjacentHTML('beforeend', "Yelp  Rating :  " + "<img src =" + dataObject.rating_img_url_large + ">");
                     var dataDiv=document.createElement("div");
-                        dataDiv.setAttribute('class', ' col-md-8');
-                        dataDiv.setAttribute('id','datadiv');
+                    dataDiv.setAttribute('class', ' col-md-8');
+                    dataDiv.setAttribute('id','datadiv');
                     var destDiv=document.getElementById('datacontent');
                 }
                 for (var infoBlock= 0;infoBlock<dataObject.name[infoBlock].length; infoBlock++){
@@ -91,8 +95,8 @@ function mapLaunch() {
             clearMap() },true);
     }
 }
-var wholePage = document;
-wholePage.addEventListener('load', function(){
+var loadList = document.getElementById('dropdownMenu1');
+loadList.addEventListener('click', function() {
     createList()
 }, true);
 var viewShift = document.getElementById('dropdownMenu1');
